@@ -1,6 +1,6 @@
 FROM node:20-bullseye
 
-# Multimedia aur Canvas build tools install karna
+# Canvas aur multimedia packages ke liye essential compile-tools install karna
 RUN apt-get update && \
     apt-get install -y \
     ffmpeg \
@@ -19,9 +19,9 @@ WORKDIR /usr/src/app
 
 COPY package.json .
 
-# Purane corrupted folders delete karke fresh installation
+# Purane local folders clear karke strict peer dependency conflict ko bypass karna
 RUN rm -rf node_modules package-lock.json && \
-    npm install
+    npm install --legacy-peer-deps
 
 COPY . .
 
