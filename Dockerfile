@@ -1,4 +1,5 @@
-FROM node:lts-buster 
+FROM node:20-bullseye
+
 RUN apt-get update && \
     apt-get install -y \
     ffmpeg \
@@ -18,4 +19,3 @@ COPY . .
 EXPOSE 5000
 
 CMD ["node", "cluster.js"]
-
