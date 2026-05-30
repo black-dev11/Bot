@@ -1,6 +1,6 @@
 FROM node:20-bullseye
 
-# Canvas aur multimedia packages install karna
+# Multimedia aur Canvas build tools install karna
 RUN apt-get update && \
     apt-get install -y \
     ffmpeg \
@@ -19,15 +19,12 @@ WORKDIR /usr/src/app
 
 COPY package.json .
 
-# Fresh core modules installation
+# Purane corrupted folders delete karke fresh installation
 RUN rm -rf node_modules package-lock.json && \
-    npm install && \
-    npm install -g qrcode-terminal pm2
+    npm install
 
 COPY . .
 
-# Bot port exposure
 EXPOSE 5000
 
-# Direct index.js ko start karega bina cluster.js ke jhat jhat ke
-CMD ["node", "index.js"]
+CMD ["node", "cluster.js"]
