@@ -2,37 +2,41 @@
   "name": "shehbaz-md",
   "version": "9.0.0",
   "description": "SHEHBAZ-MD WhatsApp bot created by Shehbaz",
-  "main": "index.js",
+  "main": "cluster.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name SHEHBAZ-MD",
-    "stop": "pm2 stop SHEHBAZ-MD",
-    "restart": "pm2 restart SHEHBAZ-MD"
+    "start": "node cluster.js"
   },
   "dependencies": {
     "@dark-yasiya/news-scrap": "latest",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@sl-code-lords/movie-api": "latest",
     "@whiskeysockets/baileys": "v7.0.0-rc.9",
-    "fflate" : "latest",
-    "figlet" : "latest",
     "adm-zip": "latest",
     "api-dylux": "latest",
+    "awesome-phonenumber": "^5.10.0",
     "axios": "latest",
+    "body-parser": "^1.20.2",
     "buffer": "latest",
     "canvas": "latest",
     "cheerio": "latest",
+    "cors": "^2.8.5",
     "express": "latest",
+    "fflate": "latest",
+    "figlet": "latest",
     "file_size_url": "latest",
     "fluent-ffmpeg": "latest",
+    "form-data": "^4.0.0",
     "fs-extra": "latest",
     "g-i-s": "latest",
     "google-tts-api": "^2.0.2",
+    "jimp": "^0.22.12",
     "megajs": "latest",
     "mime-type": "latest",
     "moment": "latest",
     "mongoose": "latest",
     "node-cache": "latest",
     "node-fetch": "latest",
+    "node-webpmux": "^3.1.7",
     "pdfkit": "latest",
     "pino": "latest",
     "pm2": "^6.0.14",
@@ -44,5 +48,3 @@
     "yt-search": "latest"
   }
 }
-
-
