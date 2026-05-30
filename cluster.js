@@ -25,10 +25,10 @@ function startBotInstance(sessionId) {
     console.log(`📦 Session ID: ${sessionId}`);
     console.log(`=============================================\n`);
     
-    // index.js (Bot code) ko background me isolated run karna with correct directory context
+    // index.js (Bot code) ko background me isolated run karna
     const child = fork(path.join(__dirname, 'index.js'), [sessionId], {
         env: { ...process.env, SESSION_ID: sessionId },
-        cwd: __dirname // 💡 Yeh zaroori hai taaki bot ko `./setting` aur baki local files mil sakein
+        cwd: __dirname
     });
 
     // Save instance reference
@@ -48,14 +48,14 @@ function startBotInstance(sessionId) {
 app.post('/api/start-bot', (req, res) => {
     const sessionId = req.body.session_id;
     if (!sessionId) {
-        return res.status(400).send({ success: false, error: \"Session token missing\" });
+        return res.status(400).send({ success: false, error: "Session token missing" });
     }
 
     const started = startBotInstance(sessionId);
     if (started) {
-        res.send({ success: true, message: \"Bot process spawned successfully\" });
+        res.send({ success: true, message: "Bot process spawned successfully" });
     } else {
-        res.status(500).send({ success: false, error: \"Failed to spawn process\" });
+        res.status(500).send({ success: false, error: "Failed to spawn process" });
     }
 });
 
