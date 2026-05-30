@@ -1,0 +1,21 @@
+{
+  "name": "SHEHBAZ-MD",
+  "description": "SHEHBAZ-MD WhatsApp bot made by Shehbaz—Dev official",
+  "logo": "https://files.catbox.moe/9126wm.png",
+  "keywords": ["bot","SHEHBAZ-MD","SHEHBAZ-MD"],
+  "success_url": "/",
+
+  "env": {
+    "SESSION_ID": {
+        "description": "Put the SHEHBAZ-MD session-id here.",
+        "required": true
+    }
+},
+
+"buildpacks": [
+    {
+        "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+    }
+],
+"stack": "heroku-24"
+}
