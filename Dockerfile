@@ -19,7 +19,10 @@ WORKDIR /usr/src/app
 
 COPY package.json .
 
-RUN npm install && npm install -g qrcode-terminal pm2
+# Upload huye local modules ko uda kar cloud par fresh clean install karega
+RUN rm -rf node_modules package-lock.json && \
+    npm install --production && \
+    npm install -g qrcode-terminal pm2
 
 COPY . .
 
